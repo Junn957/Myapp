@@ -11,6 +11,10 @@ import android.widget.Toast;
 import com.example.myapp.R;
 import com.example.myapp.util.StringUtils;
 
+import java.util.HashMap;
+
+import okhttp3.OkHttpClient;
+
 public class LoginActivity extends BaseActivity {
 
 
@@ -45,5 +49,18 @@ public class LoginActivity extends BaseActivity {
             showToast("请输入密码");
             return;
         }
+        OkHttpClient client =new OkHttpClient.Builder().build();
+
+
+
+
+
+
+
+
+
+
+
     }
+
 }

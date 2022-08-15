@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
-            android:layout_marginTop="278dp"
+            android:layout_marginTop="150dp"
             android:paddingLeft="43dp"
             android:paddingRight="31dp"
             android:layout_height="230dp"
