@@ -43,7 +43,7 @@
                     android:textColorHint="#bcbcbc"
                     android:background="@null"
                     android:textSize="18sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="#000000"/>
             </LinearLayout>
             <View
                 android:layout_marginTop="23dp"
@@ -78,10 +78,10 @@
             android:layout_marginTop="67dp"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/shape_big_login_btn"
-            android:text="@string/login"
+            android:background="@drawable/shape_big_register_btn"
+            android:text="@string/register"
             android:textSize="24sp"
-            android:textColor="#ffffff"/>
+            android:textColor="@color/white"/>
 
-        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
