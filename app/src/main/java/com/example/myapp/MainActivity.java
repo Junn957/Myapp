@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.myapp.activity.BaseActivity;
 import com.example.myapp.activity.LoginActivity;
 import com.example.myapp.activity.RegisterActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Button btnLogin;
     private Button btnRegister;
@@ -21,19 +22,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnLogin = findViewById(R.id.btn_login);
         btnRegister = findViewById(R.id.btn_register);
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(in);
+                navigateTo(LoginActivity.class);
             }
         });
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(in);
+               navigateTo(RegisterActivity.class);
             }
         });
 

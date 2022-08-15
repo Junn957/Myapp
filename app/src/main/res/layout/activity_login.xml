@@ -36,6 +36,7 @@
                     android:layout_height="25dp"
                     android:src="@mipmap/account"/>
                 <EditText
+                    android:id="@+id/et_account"
                     android:layout_marginLeft="20dp"
                     android:layout_width="108dp"
                     android:layout_height="24dp"
@@ -43,7 +44,7 @@
                     android:textColorHint="#bcbcbc"
                     android:background="@null"
                     android:textSize="18sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="#000000"/>
             </LinearLayout>
             <View
                 android:layout_marginTop="23dp"
@@ -61,6 +62,7 @@
                     android:layout_height="25dp"
                     android:src="@mipmap/pwd"/>
                 <EditText
+                    android:id="@+id/et_pwd"
                     android:layout_marginLeft="20dp"
                     android:layout_width="108dp"
                     android:layout_height="24dp"
@@ -73,6 +75,7 @@
 
         </LinearLayout>
         <Button
+            android:id="@+id/btn_login"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginTop="67dp"
@@ -81,7 +84,7 @@
             android:background="@drawable/shape_big_login_btn"
             android:text="@string/login"
             android:textSize="24sp"
-            android:textColor="#ffffff"/>
+            android:textColor="@color/white"/>
 
-        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
