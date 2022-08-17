@@ -1,34 +1,17 @@
 package com.example.myapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.myapp.R;
 import com.example.myapp.api.Api;
 import com.example.myapp.api.ApiConfig;
-import com.example.myapp.api.JunCallback;
-import com.example.myapp.util.AppConfig;
+import com.example.myapp.api.TtitCallback;
 import com.example.myapp.util.StringUtils;
 
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class LoginActivity extends BaseActivity {
 
@@ -68,9 +51,9 @@ public class LoginActivity extends BaseActivity {
         HashMap<String,Object> params = new HashMap<String,Object>();
         params.put("mobile",account);
         params.put("password",pwd);
-        Api.config(ApiConfig.LOGIN,params).postRequest(new JunCallback() {
+        Api.config(ApiConfig.LOGIN,params).postRequest(new TtitCallback() {
             @Override
-            public void onSuccess(String res) {
+            public void onSuccess(final String res) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

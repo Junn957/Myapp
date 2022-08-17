@@ -2,8 +2,6 @@ package com.example.myapp.api;
 
 import android.util.Log;
 
-import com.example.myapp.util.AppConfig;
-
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -32,7 +30,7 @@ public class Api {
         mParams =params;
         return api;
     }
-    public void postRequest(JunCallback callback){
+    public void postRequest(TtitCallback callback){
         JSONObject jsonObject = new JSONObject(mParams);
         String jsonStr =jsonObject.toString();
         RequestBody requestBodyJson =
