@@ -34,7 +34,7 @@ public class Api {
         JSONObject jsonObject = new JSONObject(mParams);
         String jsonStr =jsonObject.toString();
         RequestBody requestBodyJson =
-                RequestBody.create(MediaType.parse("application/json; charset = utf-8")
+                RequestBody.create(MediaType.parse("application/json;charset=utf-8")
                         , jsonStr);
         Request request =new Request.Builder()
                 .url(requestUrl)
@@ -53,6 +53,7 @@ public class Api {
             public void onResponse(Call call, Response response) throws IOException {
                 final String result =response.body().string();
                 callback.onSuccess(result);
+                Log.d("gjj", result);
             }
         });
     }

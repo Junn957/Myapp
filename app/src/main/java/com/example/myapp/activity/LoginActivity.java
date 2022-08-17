@@ -49,8 +49,8 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         HashMap<String,Object> params = new HashMap<String,Object>();
-        params.put("mobile",account);
-        params.put("password",pwd);
+        params.put("mobile" ,account);
+        params.put("password" ,pwd);
         Api.config(ApiConfig.LOGIN,params).postRequest(new TtitCallback() {
             @Override
             public void onSuccess(final String res) {
