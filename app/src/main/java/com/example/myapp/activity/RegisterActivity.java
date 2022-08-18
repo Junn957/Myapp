@@ -9,7 +9,7 @@ import android.widget.EditText;
 import com.example.myapp.R;
 import com.example.myapp.api.Api;
 import com.example.myapp.api.ApiConfig;
-import com.example.myapp.api.TtitCallback;
+import com.example.myapp.api.JunCallback;
 import com.example.myapp.util.StringUtils;
 
 import java.util.HashMap;
@@ -51,7 +51,7 @@ public class RegisterActivity extends BaseActivity {
         HashMap<String,Object> params = new HashMap<String,Object>();
         params.put("mobile",account);
         params.put("password",pwd);
-        Api.config(ApiConfig.REGISTER,params).postRequest(new TtitCallback() {
+        Api.config(ApiConfig.REGISTER,params).postRequest(new JunCallback() {
             @Override
             public void onSuccess(final String res) {
                 runOnUiThread(new Runnable() {

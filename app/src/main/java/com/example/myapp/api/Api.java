@@ -30,7 +30,7 @@ public class Api {
         mParams =params;
         return api;
     }
-    public void postRequest(TtitCallback callback){
+    public void postRequest(JunCallback callback){
         JSONObject jsonObject = new JSONObject(mParams);
         String jsonStr =jsonObject.toString();
         RequestBody requestBodyJson =
@@ -53,7 +53,6 @@ public class Api {
             public void onResponse(Call call, Response response) throws IOException {
                 final String result =response.body().string();
                 callback.onSuccess(result);
-                Log.d("gjj", result);
             }
         });
     }

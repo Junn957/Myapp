@@ -1,6 +1,6 @@
 package com.example.myapp.api;
 
-public interface TtitCallback {
+public interface JunCallback {
 
     void onSuccess(String res);
 
