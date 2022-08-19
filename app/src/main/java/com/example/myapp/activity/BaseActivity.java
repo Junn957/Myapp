@@ -10,9 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.security.PublicKey;
-
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     public Context mContext;
 
@@ -20,7 +18,15 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext =this;
+        setContentView(initLayout());
+        initLayout();
+        initView();
+        initData();
     }
+    protected abstract int initLayout();
+    protected abstract void initView();
+    protected abstract void initData();
+
     public void showToast(String msg){
         Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
 

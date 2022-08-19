@@ -1,6 +1,5 @@
 package com.example.myapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -18,11 +17,11 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     private String[] mTitles = {"首页", "收藏", "我的"};
     private int[] mIconUnselectIds = {
-            R.mipmap.home_unselect,R.mipmap.collect_unselect,
+            R.mipmap.home_unselect, R.mipmap.collect_unselect,
             R.mipmap.my_unselect};
     private int[] mIconSelectIds = {
             R.mipmap.home_selected, R.mipmap.collect_selected,
@@ -33,15 +32,19 @@ public class HomeActivity extends AppCompatActivity {
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
+    @Override
+    protected int initLayout() {
+        return R.layout.activity_home;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-
+    protected void initView() {
         viewPager = findViewById(R.id.viewpager);
-        commonTabLayout =findViewById(R.id.commonTabLayout);
+        commonTabLayout = findViewById(R.id.commonTabLayout);
+    }
+
+    @Override
+    protected void initData() {
         mFragments.add(HomeFragment.newInstance());
         mFragments.add(CollectFragment.newInstance());
         mFragments.add(MyFragment.newInstance());
@@ -49,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
-
+        commonTabLayout.setTabData(mTabEntities);
         commonTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
@@ -62,9 +65,23 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        commonTabLayout.setTabData(mTabEntities);
-        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(),mTitles,mFragments));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+                commonTabLayout.setCurrentTab(position);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), mTitles, mFragments));
     }
 }
