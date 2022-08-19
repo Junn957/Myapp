@@ -63,8 +63,10 @@ public class LoginActivity extends BaseActivity {
 
                 if(loginResponse.getCode() == 0){
                     String token =loginResponse.getToken();
-                    saveStringToSp("token",token);
+                    saveStringToSp("token",token);    //本地保存token
+                    navigateTo(HomeActivity.class);
                     showToastSync("登录成功");
+
                 } else
                     showToastSync("登录失败");
             }

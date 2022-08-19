@@ -35,9 +35,9 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    protected void  saveStringToSp(String key ,String val){
+    protected void  saveStringToSp(String key ,String val){            //本地保存token
         SharedPreferences sp = getSharedPreferences("sp_ttit",MODE_PRIVATE);
-        SharedPreferences.Editor editor =sp.edit();
+        SharedPreferences.Editor editor = sp.edit();
         editor.putString(key,val);
         editor.commit();
 
