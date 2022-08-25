@@ -48,7 +48,6 @@ public class HomeActivity extends BaseActivity {
         mFragments.add(HomeFragment.newInstance());
         mFragments.add(CollectFragment.newInstance());
         mFragments.add(MyFragment.newInstance());
-
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
@@ -61,10 +60,10 @@ public class HomeActivity extends BaseActivity {
 
             @Override
             public void onTabReselect(int position) {
-
             }
         });
 
+        viewPager.setOffscreenPageLimit(mFragments.size());
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

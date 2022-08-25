@@ -9,13 +9,16 @@
         <entry key="app/src/main/res/drawable/shape_login_btn.xml" value="0.2315" />
         <entry key="app/src/main/res/drawable/shape_login_form.xml" value="0.2575" />
         <entry key="app/src/main/res/drawable/shape_register_btn.xml" value="0.232" />
+        <entry key="app/src/main/res/drawable/shape_search_box.xml" value="0.1835" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19736842105263158" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/layout/fragment_collect.xml" value="0.24739583333333334" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.24739583333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_my.xml" value="0.24739583333333334" />
+        <entry key="app/src/main/res/layout/fragment_video.xml" value="0.34739583333333335" />
+        <entry key="app/src/main/res/layout/item_video_layout.xml" value="0.26145833333333335" />
       </map>
     </option>
   </component>
